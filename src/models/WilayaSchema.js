@@ -1,11 +1,16 @@
 const mongoose = require("mongoose");
 
-const Member = mongoose.model(
+const Wilaya = mongoose.model(
   "Wilaya",
-  new mongoose.Schema({
-   
-   //fields
-     
+  new mongoose.Schema({  
+    code: {
+      type: Number,
+      required:[true,'le champ code est obligatoire']
+    },
+    nom: {
+      type: String,
+      required:[true,'le champ nom est obligatoire']
+    }, 
   })
 );
 
