@@ -8,6 +8,9 @@ const Lieu = mongoose.model(
     type: String,
     required: [true, 'ce champ est obligatoire']
    },
+   imagesUrl: {
+   type: [String]
+   },
    descripton: {
     type: String,
     required: [true, 'ce champ est obligatoire']
