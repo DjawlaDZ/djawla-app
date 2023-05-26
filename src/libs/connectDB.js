@@ -2,7 +2,7 @@ const mongoose= require('mongoose')
 
 function connectDB() {	
 	mongoose.connect(
-	    process.env.DB_URL,
+	    process.env.MONGODB_URI,
 	).then(()=>{
 		console.log('db connection established')})
 		.catch(e=>{
