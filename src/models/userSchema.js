@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
 
-const User = mongoose.model(
-  "User",
-  new mongoose.Schema({
+
+const User = {
    
     nom: {
       type: String,
@@ -28,23 +27,27 @@ const User = mongoose.model(
       type: Date,
       default: Date.now,
      },
+     roles: {
+      type: [String],
+      enum: ['normal','adminMinistere','adminWilaya'],
+     },
      permissions: {
       type: [String],
       enum: ['none','ajouter_lieu','modifier_lieu','supprimer_lieu',
               'ajouter_event','modifier_event','supprimer_event',
-              'ajouter_guide','modifier_guide','supprimer_guide','all']
+              'ajouter_guide','modifier_guide','supprimer_guide','all'],
      },
      favoris: {
       type: [mongoose.SchemaTypes.ObjectId],
+      required: false,
       ref: 'Lieu'
      },
      wilaya: {
-      type: mongoose.SchemaTypes.ObjectId,
-      ref: 'Wilaya',
-      required: false
+      required:[true,'la wilaya est obligatoire'],
+      type: String,
+      enum: ['Alger','Tizi','Bejaia'],
      }
      
-  })
-);
+  }
 
-module.exports = User;
+module.exports =  mongoose.models.User || mongoose.model("User",new mongoose.Schema(User));
