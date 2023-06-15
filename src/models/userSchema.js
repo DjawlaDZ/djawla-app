@@ -45,7 +45,7 @@ const User = {
      wilaya: {
       required:[true,'la wilaya est obligatoire'],
       type: String,
-      enum: ['Alger','Tizi','Bejaia'],
+      enum: ['Alger','Tizi','Bejaia','Batna','Oran','Adrar','Tiaret'],
      }
      
   }

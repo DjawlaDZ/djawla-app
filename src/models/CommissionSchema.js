@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 
-const Commission = mongoose.model(
-  "Commission",
-  new mongoose.Schema({
+const Commission = {
    
    nom: {
     type: String,
@@ -18,9 +16,9 @@ const Commission = mongoose.model(
    admin: {
     type: mongoose.SchemaTypes.ObjectId,
     ref: 'User',
+    unique: true,
     required: [true, 'le champ admin est obligatoire']
    }
-  })
-);
+  }
 
-module.exports = Commission;
+module.exports = mongoose.models.Commission || mongoose.model("Commission", new mongoose.Schema(Commission));

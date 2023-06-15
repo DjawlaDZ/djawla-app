@@ -1,4 +1,3 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 const connectDB = require("../../../libs/connectDB.js")
 const {updateUser, deleteUser, getUserDetail} = require('../../../server/services/userService.js')
 
