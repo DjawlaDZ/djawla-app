@@ -1,18 +1,18 @@
 const mongoose = require("mongoose");
 
-const Event = mongoose.model(
-  "Event",
-  new mongoose.Schema({
-   
-   nom: {
+const EventSchema = new mongoose.Schema({
+  nom: {
     type: String,
     required: [true, 'le nom est obligatoire']
-   },
-   descripton: {
+  },
+  description: {
     type: String,
     required: [true, 'ce champ est obligatoire']
-   },
-   frais: {
+  },
+  ville: {
+    type: String,
+    },
+  frais: {
     type: Number,
     default: 0,
   },
@@ -28,9 +28,6 @@ const Event = mongoose.model(
     type: Date,
     required: [true, 'la date et le temps de fermeture est obligatoire']
   }
+});
 
-     
-  })
-);
-
-module.exports = Event;
+module.exports = mongoose.models.Event || mongoose.model('Event', EventSchema);

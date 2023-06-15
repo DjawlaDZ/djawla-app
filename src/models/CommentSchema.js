@@ -1,27 +1,22 @@
 const mongoose = require("mongoose");
 
-const Comment = mongoose.model(
-  "Comment",
-  new mongoose.Schema({
-   
-   contenu: { 
+const CommentSchema = new mongoose.Schema({
+  contenu: {
     type: String,
     required: [true, 'ce champ est obligatoire']
   },
-   utilisateur: {
+  utilisateur: {
     type: mongoose.SchemaTypes.ObjectId,
-    Ref : 'User'
-   },
-   lieu: {
+    ref: 'User'
+  },
+  lieu: {
     type: mongoose.SchemaTypes.ObjectId,
-    Ref : 'Lieu'
-   },
-   repliedTo: {
+    ref: 'Lieu'
+  },
+  repliedTo: {
     type: mongoose.SchemaTypes.ObjectId,
-    Ref : 'Comment'
-   },
-     
-  })
-);
+    ref: 'Comment'
+  }
+});
 
-module.exports = Comment;
+module.exports = mongoose.models.Comment || mongoose.model('Comment', CommentSchema);

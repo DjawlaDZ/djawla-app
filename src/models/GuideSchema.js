@@ -1,40 +1,35 @@
 const mongoose = require("mongoose");
 
-const Guide = mongoose.model(
-  "Guide",
-  new mongoose.Schema({
-   
-   nom: {
+const GuideSchema = new mongoose.Schema({
+  nom: {
     type: String,
     required: [true, 'le nom est obligatoire']
-   },
-   prenom: {
+  },
+  prenom: {
     type: String,
     required: [true, 'le prenom est obligatoire']
-   },
-   email: {
+  },
+  email: {
     type: String,
     required: [true, 'email est obligatoire']
-   },
-   tel: {
+  },
+  tel: {
     type: Number,
-    required: [true, 'le telephone est obligatoire']
-   },
-   commission: {
+    // required: [true, 'le telephone est obligatoire']
+  },
+  commission: {
     type: mongoose.SchemaTypes.ObjectId,
     ref: 'Commission'
-   },
-   services: {
-    type: [mongoose.SchemaTypes.Mixed],
+  },
+  services: {
+    type: [String],
     enum: [
-      {'assisatnce linguistique':'2000'},
-      {'informations et destinations':'2000',},
-      {'accompagnement et securité':'2000'},
-      {'service personalisé':'2000'},
+      'assisatnce linguistique',
+      'informations et destinations',
+      'accompagnement et securité',
+      'service personalisé',
     ]
-   }
-     
-  })
-);
+  }
+});
 
-module.exports = Guide;
+module.exports = mongoose.models.Guide || mongoose.model('Guide', GuideSchema);
