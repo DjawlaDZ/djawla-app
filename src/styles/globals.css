@@ -1,27 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-primary: #fdfdfd;
+  --background-secondry: #F7F7F7;
+  --color-black:#000000;
+  --color-white:#ffffff;
+  --color-orange: #FFAA8B;
+  --color-grey: #B2B1B1 ;
+  --color-blue: #4285F4;
+  --card-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
+  --transition: all 400ms ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  scroll-behavior: smouth;
+  font-family: 'Open Sans', sans-serif;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: var(--background-primary)
+}
+
+
+.btn-blue{
+  width : max-content;
+  display: inline-block;
+  color: var(--color-white);
+  background: var(--color-blue);
+  padding: 15px 25px;
+  border-radius: 5rem;
+  cursor: pointer;
+  border: 1px solid var(--color-blue);
+  transition: var(--transition);
+}
+.btn-blue:hover{
+  background: var(--color-orange);
+  color: var(--color-black);
+  border-color: transparent;
+  transition: var(--transition);
+}
+
+
+.btn-orange{
+  width : max-content;
+  display: inline-block;
+  color: var(--color-black);
+  background: var(--color-orange);
+  padding: 7px 15px;
+  border-radius: 3rem;
+  cursor: pointer;
+  border: 1px solid var(--color-orange);
+  transition: var(--transition);
+}
+.btn-orange:hover{
+  background: var(--color-blue);
+  color: var(--color-white);
+  border-color: transparent;
+  transition: var(--transition);
 }
