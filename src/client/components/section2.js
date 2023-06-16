@@ -40,7 +40,7 @@ function Post({data}) {
     return (
         <div className='item'>
             <div className='image'>
-                <Link href={"/"}><Image src={data.imagesUrl[0]} className='rounded' width={500} height={350} /></Link>
+                <Link href={"/"}><img src={data.imagesUrl[0]} className='rounded' width={500} height={350} /></Link>
             </div>
             <div className='info flex justify-center flex-col py-4 '>
                 <div className='cat flex gap-2'>

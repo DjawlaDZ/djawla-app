@@ -8,6 +8,12 @@ import Filter from './filter';
 export default function HomeNavBar() {
     const [stat, setStat] = useState(false);
     const [color, setColor] = useState('none');
+    const [url,seturl]=useState('');
+    const setUrl = (data) => {
+        // Process the data received from the child component
+        seturl(data);
+      };
+
     return (
         <>
             <header className='px-16'>
@@ -26,10 +32,11 @@ export default function HomeNavBar() {
                     <div className='shrink w-80 order-1 '>
                         <div className='font-bold text-3xl'>Tournez L'Algérie</div>
                     </div>
+                    <div>{url}</div>
 
                 </div>
             </header>
-            {stat ? <Filter></Filter> : null}
+            {stat ? <Filter getUrl={setUrl}></Filter> : null}
         </>
     )
 }
