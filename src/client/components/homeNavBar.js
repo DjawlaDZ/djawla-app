@@ -20,6 +20,7 @@ export default function HomeNavBar({getUrl,getFilter}) {
         setFilter(data);
         getFilter(filter);
       };
+
     return (
         <>
             <header className='px-16'>

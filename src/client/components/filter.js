@@ -69,6 +69,7 @@ export default function Filter({getUrl,getfilter}) {
           setfil(!fil);
           getfilter(fil);
         }}>filtrer</button>:null}
+
       </div>
     </div>
   )
