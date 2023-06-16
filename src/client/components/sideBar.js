@@ -10,13 +10,13 @@ import Link from 'next/link';
 
 export default function SideBar() {
   const menus = [
-    { name: "Accueil", link: "/", icon: FiHome },
-    { name: "Profil", link: "/", icon: AiOutlineUser },
-    { name: "Carte", link: "/", icon: FiMap },
-    { name: "Statistique", link: "/", icon: TbReportAnalytics, },
-    { name: "Ajout lieu", link: "/", icon: RiMapPinAddLine },
-    { name: "Favoris", link: "/", icon: AiOutlineHeart, },
-    { name: "paramètres", link: "/", icon: RiSettings4Line },
+    { name: "Accueil", link: "/home", icon: FiHome },
+    { name: "Profil", link: "/home", icon: AiOutlineUser },
+    { name: "Carte", link: "/home", icon: FiMap },
+   // { name: "Statistique", link: "/", icon: TbReportAnalytics, },
+    //{ name: "Ajout lieu", link: "/", icon: RiMapPinAddLine },
+    { name: "Favoris", link: "/home", icon: AiOutlineHeart, },
+    //{ name: "paramètres", link: "/", icon: RiSettings4Line },
   ];
   return (
     <section className="flex gap-6 bg-[#FDFDFD] ">

@@ -2,9 +2,9 @@
 import React, { useState } from 'react'
 const categories = [
   { label: '_', value: '_' },
-  { label: 'Monument', value: 'Monument' },
-  { label: 'Musée', value: 'Musée' },
-  { label: 'Place', value: 'Place' },
+  { label: 'Monuments', value: 'Monuments' },
+  { label: 'Musées', value: 'Musées' },
+  { label: 'Places', value: 'Places' },
 ];
 const themes = [
   { label: '_', value: '_' },

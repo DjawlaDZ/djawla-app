@@ -2,7 +2,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { AiOutlineHeart, } from 'react-icons/ai'
-import { BsPin, BsPinMap, BsPinMapFill } from 'react-icons/bs'
 import { FiMapPin } from 'react-icons/fi'
 import { MdFavorite, MdPin, } from 'react-icons/md'
 
