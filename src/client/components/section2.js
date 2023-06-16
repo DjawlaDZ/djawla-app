@@ -2,7 +2,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { AiOutlineHeart, } from 'react-icons/ai'
-import { MdFavorite, } from 'react-icons/md'
+import { BsPin, BsPinMap, BsPinMapFill } from 'react-icons/bs'
+import { FiMapPin } from 'react-icons/fi'
+import { MdFavorite, MdPin, } from 'react-icons/md'
 
 export default function Section2({lieux}) {
     
@@ -28,17 +30,22 @@ function Post({data}) {
                     <div className=''>
                     <div className='title flex gap-2'>
                             <Link href={"/"}><div className='text-xl font-bold'>{data.nom}</div></Link>
+                            
                         </div>
-                        <div className='cat flex gap-2'>
+                        {data.wilaya && <div className='title flex gap-2' >
+                            <FiMapPin size={20}
+                        color='#7DADFE'/>
+                            <div>{data.wilaya}</div></div>}
+                        {data.categorie && <div className='cat flex gap-2'>
                         <label>Catégorie:</label>
                             {data.categorie
                             &&data.categorie.map((value, index)=>{return(<div key={index} className='bg-[#FFAA8B] text-white rounded-xl px-2'>{value}</div>)})}
-                        </div>
-                        <div className='cat flex gap-2'>
+                        </div>}
+                        {data.theme && <div className='cat flex gap-2'>
                         <label>Thème :</label>
                             {data.theme
                             &&data.theme.map((value, index)=>{return(<div key={index} className='bg-[#7DADFE] text-white rounded-xl px-2'>{value}</div>)})}
-                        </div>
+                        </div>}
                     </div>
                     <div >
                         {!stat ?
