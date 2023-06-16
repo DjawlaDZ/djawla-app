@@ -18,12 +18,12 @@
 }
 
 * {
-  scroll-behavior: smouth;
+  scroll-behavior: smooth;
   font-family: 'Open Sans', sans-serif;
 }
 
 body {
-  background: var(--background-primary)
+  background: var(--background-secondry)
 }
 
 
@@ -62,4 +62,22 @@ body {
   color: var(--color-white);
   border-color: transparent;
   transition: var(--transition);
+}
+
+
+.custom-scrollbar{
+  display: block;
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
+/* width */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+} 
+/* Handle */
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #B2B1B1;
+  border-radius: 50px;
+  width: 8px;
 }

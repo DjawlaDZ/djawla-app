@@ -11,6 +11,8 @@
   "dependencies": {
     "@cloudinary/react": "^1.11.2",
     "@cloudinary/url-gen": "^1.10.1",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "autoprefixer": "10.4.14",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^1.37.0",
@@ -24,7 +26,9 @@
     "postcss": "8.4.23",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-icons": "^4.9.0",
     "react-map-gl": "^7.0.23",
+    "swiper": "^9.4.1",
     "tailwindcss": "3.3.2"
   }
 }

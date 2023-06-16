@@ -12,16 +12,16 @@ export default function SideBar() {
     const menus = [
         { name: "Accueil", link: "/", icon: FiHome },
         { name: "Profil", link: "/", icon: AiOutlineUser },
-        { name: "Carte", link: "/", icon: FiMap },
+        { name: "Carte", link: "/Carte", icon: FiMap },
         { name: "Statistique", link: "/", icon: TbReportAnalytics, },
         { name: "File Manager", link: "/", icon: FiFolder },
         { name: "Favoris", link: "/", icon: AiOutlineHeart, },
         { name: "paramètres", link: "/", icon: RiSettings4Line },
       ];
   return (
-    <section className="flex gap-6 bg-[#FDFDFD] ">
+    <section className="flex gap-6  ">
       <div
-        className={`h-[100vh] z-[1000] top-0 min-h-screen w-16 duration-500 text-gray-100 px-4 fixed drop-shadow`}
+        className={`h-[100vh] z-[1000] bg-white top-0 min-h-screen w-16 duration-500 text-gray-100 px-4 fixed drop-shadow`}
       >
         <div className="py-3 flex justify-end">
           <HiMenuAlt3
