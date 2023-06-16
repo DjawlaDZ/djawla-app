@@ -37,7 +37,7 @@ export default function HomeNavBar({getUrl,getFilter}) {
                         <button className='bg-[#FFAA8B] rounded-full px-2 shadow-sm text-white'>rechercher</button>
                     </div>
                     <div className='shrink w-80 order-1 '>
-                        <div className='font-bold text-3xl'>Tournez L'Algérie</div>
+                        <div className='font-bold text-3xl'>Un Tour en Algérie</div>
                     </div>
 
                 </div>
