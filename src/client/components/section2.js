@@ -4,31 +4,12 @@ import React, { useEffect, useState } from 'react'
 import { AiOutlineHeart, } from 'react-icons/ai'
 import { MdFavorite, } from 'react-icons/md'
 
-export default function Section2() {
-    const [lieux, setLieux] = useState([]);
-
-const getLieux = async () => {
-  try {
-    const response = await fetch('/api/lieux', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-useEffect(() => {
-  getLieux().then((data) => setLieux(data.data)).then((data) => console.log(data));
-}, []);
+export default function Section2({lieux}) {
+    
 
     return (
         <div className='container mx-auto md:px-20 py-10 px-16'>
-            <h1 className='font-bold text-4xl text-center pb-4'>Les lieux les plus recsents</h1>
+            <h1 className='font-bold text-4xl text-center pb-4'>Les lieux les plus populaires</h1>
             <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-14'>
                 {lieux && lieux.map((lieu)=>{return(<Post key={lieu.id} data={lieu} />)})}
             </div>

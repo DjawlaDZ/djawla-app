@@ -5,13 +5,20 @@ import { GoSettings } from 'react-icons/go'
 import Filter from './filter';
 
 
-export default function HomeNavBar() {
+export default function HomeNavBar({getUrl,getFilter}) {
     const [stat, setStat] = useState(false);
     const [color, setColor] = useState('none');
     const [url,seturl]=useState('');
+    const [filter,setFilter]=useState(false);
     const setUrl = (data) => {
         // Process the data received from the child component
         seturl(data);
+        getUrl(url);
+      };
+      const setfilter = (data) => {
+        // Process the data received from the child component
+        setFilter(data);
+        getFilter(filter);
       };
     return (
         <>
@@ -31,11 +38,10 @@ export default function HomeNavBar() {
                     <div className='shrink w-80 order-1 '>
                         <div className='font-bold text-3xl'>Tournez L'Algérie</div>
                     </div>
-                    <div>{url}</div>
 
                 </div>
             </header>
-            {stat ? <Filter getUrl={setUrl}></Filter> : null}
+            {stat ? <Filter getUrl={setUrl} getfilter={setfilter}></Filter> : null}
         </>
     )
 }
