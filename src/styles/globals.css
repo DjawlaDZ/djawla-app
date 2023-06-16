@@ -63,3 +63,7 @@ body {
   border-color: transparent;
   transition: var(--transition);
 }
+*>*{
+  font-family: 'Poppins',sans-serif;
+  background: #F7F7F7;
+}
