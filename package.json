@@ -11,6 +11,7 @@
   "dependencies": {
     "@cloudinary/react": "^1.11.2",
     "@cloudinary/url-gen": "^1.10.1",
+    "@react-oauth/google": "^0.11.0",
     "autoprefixer": "10.4.14",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^1.37.0",
@@ -26,6 +27,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.9.0",
     "react-map-gl": "^7.0.25",
+    "react-oauth": "^0.0.1",
     "tailwindcss": "3.3.2"
   }
 }
