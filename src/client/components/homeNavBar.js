@@ -13,6 +13,7 @@ export default function HomeNavBar() {
         // Process the data received from the child component
         seturl(data);
       };
+
     return (
         <>
             <header className='px-16'>
