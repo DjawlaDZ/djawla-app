@@ -64,7 +64,6 @@ body {
   transition: var(--transition);
 }
 
-
 .custom-scrollbar{
   display: block;
   overflow: auto;
@@ -80,4 +79,9 @@ body {
   background: #B2B1B1;
   border-radius: 50px;
   width: 8px;
+}
+
+*>*{
+  font-family: 'Poppins',sans-serif;
+  background: #F7F7F7;
 }
