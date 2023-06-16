@@ -1,3 +1,5 @@
+import { Inter } from 'next/font/google'
+const inter = Inter({ subsets: ['latin'] })
 import HomeNavBar from "../client/components/homeNavBar";
 import Section1 from "../client/components/section1";
 import Section2 from "../client/components/section2";

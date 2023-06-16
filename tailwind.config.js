@@ -19,6 +19,9 @@ module.exports = {
         'open-sans': ['Open Sans', 'sans-serif'],
       },
     },
+    borderWidth: {
+      '1.5': '1.5px',
+    },
     screens: {
       xs: "480px",
       ss: "620px",
