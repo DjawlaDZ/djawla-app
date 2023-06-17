@@ -15,7 +15,7 @@ function MapComponent(props) {
 
   const handleMarkerClick = (item) => {
     setSelectedMarker(item);
-    router.push(`/Carte/${item.id}`);
+    router.push(`/Carte/${item._id}`);
   };
 
 

@@ -10,14 +10,14 @@ const Details = (props) => {
   const [guides, setGuides] = useState([]);
   const getGuides = async () => {
     try {
-      const result = await fetch(`/api/Disponible/${lieu.wilaya}`, {
+      const result = await fetch(`/api/Disponible/Alger`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json"
         },
       });
       const body = await result.json();
-      setGuides(body);
+      setGuides(body.place);
     } catch (error) {
       console.error(error);
     }
@@ -31,7 +31,7 @@ const Details = (props) => {
     <div className='mt-3 ml-3'>
       <div className='flex felx-row items-center mb-3'>
         <FiMapPin className='mr-5' />
-        <p>{lieu.adress}</p>
+        <p>{lieu.nom +" ,"+lieu.wilaya}</p>
       </div>
       <div className='flex felx-row items-center mb-3'>
         <AiOutlineClockCircle className='mr-5' />
