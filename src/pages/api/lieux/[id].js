@@ -24,6 +24,18 @@ export default async function handler(req, res) {
       }
       break;
 
+      case 'PUT':
+      try {
+
+        const place = await LieuSchema.findByIdAndUpdate(id, req.body, {"new":true})
+        await place.save()
+        res.status(200).json({ success: true, place });
+      } catch (error) {
+        console.error(error);
+        res.status(400).json({ success: false, error: error.message });
+      }
+      break;
+
       case 'DELETE':
         try {           
             await LieuSchema.findByIdAndRemove(id);
