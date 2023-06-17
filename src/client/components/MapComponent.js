@@ -4,6 +4,8 @@ import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { FaMapMarkerAlt } from 'react-icons/fa';
+
 
 
 function MapComponent(props) {
@@ -15,7 +17,7 @@ function MapComponent(props) {
 
   const handleMarkerClick = (item) => {
     setSelectedMarker(item);
-    router.push(`/Carte/${item.id}`);
+    router.push(`/Carte/${item._id}`);
   };
 
 
@@ -34,14 +36,23 @@ function MapComponent(props) {
         <NavigationControl position="top-right" />
         {Lieux.length > 0 ? (
           Lieux.map((item, index) => (
-            <div key={index}>
+            <div key={index} >
               <Marker
                 longitude={item.longitude}
                 latitude={item.latitude}
-                color='red'
+                color={"red"}
                 style={{ cursor: 'pointer' }}
                 onClick={() => handleMarkerClick(item)}
-              />
+              >
+                <div className={` ${selectedMarker === item ? 'clicked-marker' : ''}`}
+                >
+                  {selectedMarker === item ? (
+                    <FaMapMarkerAlt color="#C81912" size={30} className='shadow-lg' />
+                  ) : (
+                    <FaMapMarkerAlt color="#F64B3C" size={30} className='shadow-lg' />
+                  )}
+                </div>
+              </Marker>
             </div>
           ))
         ) : (
