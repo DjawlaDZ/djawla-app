@@ -12,7 +12,7 @@ export default function infoLieu() {
 
     const [lieu, setLieu] = useState({
         id:0,
-        nom: " hghg",
+        nom: "",
         imagesUrl: [],
         description: "",
         longitude: 0,
