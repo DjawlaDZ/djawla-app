@@ -1,10 +1,10 @@
-import { useRouter } from 'next/router';
+
 import React, { useState } from 'react'
 const categories = [
   { label: '_', value: '_' },
-  { label: 'Monument', value: 'Monument' },
-  { label: 'Musée', value: 'Musée' },
-  { label: 'Place', value: 'Place' },
+  { label: 'Monuments', value: 'Monuments' },
+  { label: 'Musées', value: 'Musées' },
+  { label: 'Places', value: 'Places' },
 ];
 const themes = [
   { label: '_', value: '_' },
@@ -12,13 +12,11 @@ const themes = [
   { label: 'Histoire', value: 'Histoire' },
 ];
 const wilayas=['_','Adrar', 'Chlef', 'Laghouat', 'Oum El Bouaghi', 'Batna', 'Béjaïa', 'Biskra', 'Béchar', 'Blida', 'Bouira', 'Tamanrasset', 'Tébessa', 'Tlemcen', 'Tiaret', 'Tizi Ouzou', 'Alger', 'Djelfa', 'Jijel', 'Sétif', 'Saïda', 'Skikda', 'Sidi Bel Abbès', 'Annaba', 'Guelma', 'Constantine', 'Médéa', 'Mostaganem', 'MSila', 'Mascara', 'Ouargla', 'Oran', 'El Bayadh', 'Illizi', 'Bordj Bou Arreridj', 'Boumerdès', 'El Tarf', 'Tindouf', 'Tissemsilt', 'El Oued', 'Khenchela', 'Souk Ahras', 'Tipaza', 'Mila', 'Aïn Defla', 'Naâma', 'Aïn Témouchent', 'Ghardaïa', 'Relizane'];
-
-export default function Filter({getUrl}) {
+export default function Filter({getUrl,getfilter}) {
   const [category, setCategory] = useState('_')
   const [theme, setTheme] = useState('_')
   const [wilaya, setWilaya] = useState('_')
-  const [ville, setVille] = useState('_')
-  const router = useRouter()
+  const[fil,setfil]=useState(false);
   return (
     <div className='px-16 z-2000'>
       <div className='xl:container xl:mx-auto flex flex-col items-center text-center py-6 px-3 sm:flex-row sm:justify-between'>
@@ -58,23 +56,18 @@ export default function Filter({getUrl}) {
                 );
               })}</select>
         </div>
-        <div>
-          <label >Ville :</label>
-          <select title='ville'
-            value={ville}
-            onChange={(event)=>setVille(event.target.value)}
-          ><option>_</option></select>
-        </div>
         {wilaya!== '_' || category!=='_' || theme!=='_' ? 
         <button className='text-white px-2 bg-[#7DADFE] rounded-xl' onClick={()=>{
           var url="api/Filtering?";
           if(theme!='_')
-          url=url+`Theme=${theme}`;
+          url=url+`Theme=${theme}&`;
           if(category!='_')
-          url=url+`Categorie=${category}`;
+          url=url+`Categorie=${category}&`;
           if(wilaya!='_')
-          url=url+`Wilaya=${wilaya}`;
+          url=url+`wilaya=${wilaya}&`;
           getUrl(url);
+          setfil(!fil);
+          getfilter(fil);
         }}>filtrer</button>:null}
 
       </div>
