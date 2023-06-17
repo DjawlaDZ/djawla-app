@@ -5,14 +5,21 @@ import { GoSettings } from 'react-icons/go'
 import Filter from './filter';
 
 
-export default function HomeNavBar() {
+export default function HomeNavBar({ getUrl, getFilter }) {
     const [stat, setStat] = useState(false);
     const [color, setColor] = useState('none');
-    const [url,seturl]=useState('');
+    const [url, seturl] = useState('');
+    const [filter, setFilter] = useState(false);
     const setUrl = (data) => {
         // Process the data received from the child component
         seturl(data);
-      };
+        getUrl(url);
+    };
+    const setfilter = (data) => {
+        // Process the data received from the child component
+        setFilter(data);
+        getFilter(filter);
+    };
 
     return (
         <>
@@ -22,21 +29,22 @@ export default function HomeNavBar() {
                         <BsSearch color='#726E75' />
                         <input className='input-text bg-transparent outline-none flex-1 px-3 lg:w-60 py-2 text-sm placeholder-slate-500 ' type="text" placeholder='rechercher ici...' />
                         <GoSettings />
-                        <button onClick={() => { setStat(!stat); 
+                        <button onClick={() => {
+                            setStat(!stat);
+                            setFilter(!filter);
                             if (color != '#7DADFE')
-                            setColor('#7DADFE');
+                                setColor('#7DADFE');
                             else setColor('none');
-                            }} className={`bg-[${color}] rounded-xl px-2`} >filtrer</button>
+                        }} className={`bg-[${color}] rounded-xl px-2`} >filtrer</button>
                         <button className='bg-[#FFAA8B] rounded-full px-2 shadow-sm text-white'>rechercher</button>
                     </div>
                     <div className='shrink w-80 order-1 '>
-                        <div className='font-bold text-3xl'>Tournez L'Algérie</div>
+                        <div className='font-bold text-3xl'>Un Tour en Algérie</div>
                     </div>
-                    <div>{url}</div>
 
                 </div>
             </header>
-            {stat ? <Filter getUrl={setUrl}></Filter> : null}
+            {stat ? <Filter getUrl={setUrl} getfilter={setfilter}></Filter> : null}
         </>
     )
 }
