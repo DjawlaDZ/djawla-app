@@ -5,27 +5,32 @@ import { useState, useEffect } from 'react'
 
 
 const Avis = (props) => {
-  const lieuId = props.lieuId
+  var lieuId = 0;
+  if (props.lieuId) {
+    lieuId = props.lieuId;
+  }
 
   const [comments, setComments] = useState([]);
   const getComments = async () => {
     try {
-      const result = await fetch(`/api/Comments/${lieu.wilaya}`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json"
-        },
-      });
-      const body = await result.json();
-      setComments(body);
+      if (lieuId != 0) {
+        const result = await fetch(`/api/comments/${lieuId}`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json"
+          },
+        });
+        const body = await result.json();
+        setComments(body.Comments);
+      }
     } catch (error) {
       console.error(error);
     }
   };
   useEffect(() => {
     getComments();
-  }, []);
-  
+  }, [lieuId]);
+
   return (
     <div className='width-100'>
       <UserComment lieuId={lieuId} />
