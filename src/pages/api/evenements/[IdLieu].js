@@ -14,8 +14,8 @@ export default async function handler(req, res) {
   switch (method) {
     case 'GET':
       try {
-        const Comments = await EventSchema.find({lieu : IdLieu});
-        res.status(200).json({ success: true, Comments });
+        const Evenements = await EventSchema.find({lieu : IdLieu});
+        res.status(200).json({ success: true, Evenements });
       } catch (error) {
         console.error(error);
         res.status(400).json({ success: false, error: error.message });

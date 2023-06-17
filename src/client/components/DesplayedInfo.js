@@ -18,7 +18,7 @@ function DesplayedInfo (props) {
           </li>
         )}
       </ul>
-      {userInfoCHoice==="Details" ? <Details lieu={lieu}/> : userInfoCHoice==="Avis" ? <Avis lieuId={lieu._id}/> : <Evenement/> }
+      {userInfoCHoice==="Details" ? <Details lieu={lieu}/> : userInfoCHoice==="Avis" ? <Avis lieuId={lieu._id}/> : <Evenement lieuId={lieu._id}/> }
     </div>
   )
 }
