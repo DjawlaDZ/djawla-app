@@ -51,8 +51,21 @@ export default function Home() {
     }
   };
   useEffect(() => {
-    getLieux().then((data) => setLieux(data.data)).then((data) => console.log(data));
-    getFiltredLieux().then((data) => setFiltredLieux(data.places)).then((data) => console.log(data));
+    const fetchData = async () => {
+      try {
+        const lieuxData = await getLieux();
+        setLieux(lieuxData.data);
+        console.log(lieuxData);
+  
+        const filtredLieuxData = await getFiltredLieux();
+        setFiltredLieux(filtredLieuxData.places);
+        console.log(filtredLieuxData);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  
+    fetchData();
   }, [url]);
   return (
     <div>

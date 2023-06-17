@@ -62,7 +62,7 @@ export default function Filter({getUrl,getfilter}) {
           if(theme!='_')
           url=url+`Theme=${theme}&`;
           if(category!='_')
-          url=url+`Categorie=${category}&`;
+          url=url+`Category=${category}&`;
           if(wilaya!='_')
           url=url+`wilaya=${wilaya}&`;
           getUrl(url);
