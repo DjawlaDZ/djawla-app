@@ -18,7 +18,6 @@ export default function infoLieu() {
         longitude: 0,
         latitude: 0,
         wilaya:"",
-        adress:"",
         heureOuverture: "",
         heureFermeture: "",
         joursOuverture:[],
@@ -27,14 +26,14 @@ export default function infoLieu() {
       });
   const getLieu = async () => {
       try {
-        const result = await fetch(`/api/lieu/${id}`, {
+        const result = await fetch(`/api/lieux/${id}`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json"
           },
         });
         const body = await result.json();
-        setLieu(body.data);
+        setLieu(body.place);
       } catch (error) {
         console.error(error);
       }
@@ -42,7 +41,7 @@ export default function infoLieu() {
   
     useEffect(() => {
       getLieu();
-    }, []);
+    }, [id]);
   
   return (
     <div>
