@@ -19,9 +19,9 @@ export default function SideBar() {
     //{ name: "paramètres", link: "/", icon: RiSettings4Line },
   ];
   return (
-    <section className="flex gap-6 bg-[#FDFDFD] ">
+    <section className="flex gap-6  bg-white ">
       <div
-        className={`'h-[100vh] z-[1000] top-0 min-h-screen w-16 duration-500 text-gray-100 px-4 fixed drop-shadow'}`}
+        className={`'h-[100vh] z-[1000] top-0 bg-white min-h-screen w-16 duration-500 text-gray-100 px-4 fixed drop-shadow'}`}
       >
         <div className="py-3 flex justify-end">
           <HiMenuAlt3
@@ -30,13 +30,13 @@ export default function SideBar() {
             
           />
         </div>
-        <div className={`mt-4 flex flex-col gap-4 relative`}>
+        <div className={`mt-4 flex flex-col gap-4 relative `}>
           {menus?.map((menu, i) => (
             <Link
               href={menu?.link}
               key={i}
               className={` ${menu?.margin && "mt-5"
-                } group flex items-center text-sm  gap-3.5 font-medium p-2 hover:border-b-2 border-b-[#FFAA8B] focus:border-b-2 focus:border-b-[#FFAA8B]`}
+                } group flex items-center text-sm  gap-3.5 font-medium p-2 hover:border-b-2 border-b-[#FFAA8B] focus:border-b-2 focus:border-b-[#FFAA8B] `}
             >
               <div>{React.createElement(menu?.icon, { size: "20", color: "#B2B1B1" })}</div>
 

@@ -83,5 +83,10 @@ body {
 
 *>*{
   font-family: 'Poppins',sans-serif;
-  background: #F7F7F7;
+}
+
+
+.clicked-marker {
+  transform: scale(1.2);
+  transition: transform 0.2s ease-in-out;
 }
