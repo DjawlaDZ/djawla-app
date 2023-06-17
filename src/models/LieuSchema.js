@@ -11,6 +11,9 @@ const LieuSchema = new mongoose.Schema({
   description: {
     type: String,
     // required: [true, 'ce champ est obligatoire']
+  },Adresse: {
+    type: String,
+    // required: [true, 'ce champ est obligatoire']
   },
   longitude: {
     type: Number,
