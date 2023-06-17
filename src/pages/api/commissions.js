@@ -1,11 +1,16 @@
-const connectDB = require("../../libs/connectDB.js")
+import connectDB from '../../libs/connectDB.js'
 const {getCommissions, createCommission} = require('../../server/services/commissionService.js')
 const {checkIfAdminMinistere} = require('../../middlewares/authorization.js')
 const {verifyToken} = require('../../middlewares/authJWT.js')
 
 export default async function handler(req, res) {
   
-    connectDB()
+    //database connection
+    console.log("connecting to Database");
+    await connectDB();
+    console.log("CONNECTED to Database");
+
+    //request handling
   
 
   if (req.method === 'GET') {

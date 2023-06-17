@@ -30,11 +30,11 @@ export default function Login () {
    <p className=" text-center mt-8 text-[#1F2A3E] font-bold text-2xl "> Connexion </p> 
    <form  onSubmit={handleSubmit} className="w-96 p-6 animate-slide-up">
    <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder='Adresse e-mail' required 
-   className="block w-full px-4 py-2 my-4 border  rounded-[15px] outline-none" 
+   className="block w-full px-4 py-2 my-4 border-1.5 border-gray  rounded-[15px] outline-none" 
     
    />
    <input  value={mdp} onChange={(e) => setMdp(e.target.value)} type="password" placeholder="Mot de passe" required
-   className="block w-full px-4 py-2 my-4 border  rounded-[15px] outline-none"
+   className="block w-full px-4 py-2 my-4 border-1.5 border-gray  rounded-[15px] outline-none"
    
    />
    <div style={{

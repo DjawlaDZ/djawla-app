@@ -1,11 +1,16 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction 
-const connectDB = require("../../libs/connectDB.js");
+import connectDB from '../../libs/connectDB.js'
 import CommentSchema from '../../models/CommentSchema';
 
 
 export default async function handler(req, res) {
     const { method } = req
-    connectDB()
+    //database connection
+    console.log("connecting to Database");
+    await connectDB();
+    console.log("CONNECTED to Database");
+
+    //request handling
 
     switch (method) {
       case 'GET':

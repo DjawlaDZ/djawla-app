@@ -1,11 +1,16 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-const connectDB = require("../../libs/connectDB.js")
-const User = require('../../models/userSchema.js') 
 const {createUser} = require('../../server/services/authService.js')
 const {getUsers} = require('../../server/services/userService.js')
 const {checkDuplicateEmail} = require('../../middlewares/verifySignUp.js')
+import connectDB from '../../libs/connectDB.js'
+
+
+
+
 export default async function handler(req, res) {
-  connectDB()
+  console.log("connecting to Database");
+  await connectDB();
+  console.log("CONNECTED to Database");
   
 
   if (req.method === 'GET') {

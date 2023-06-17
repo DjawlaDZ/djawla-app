@@ -12,7 +12,7 @@ export default function SideBar() {
   const menus = [
     { name: "Accueil", link: "/home", icon: FiHome },
     { name: "Profil", link: "/home", icon: AiOutlineUser },
-    { name: "Carte", link: "/home", icon: FiMap },
+    { name: "Carte", link: "/Carte", icon: FiMap },
    // { name: "Statistique", link: "/", icon: TbReportAnalytics, },
     //{ name: "Ajout lieu", link: "/", icon: RiMapPinAddLine },
     { name: "Favoris", link: "/home", icon: AiOutlineHeart, },

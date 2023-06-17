@@ -1,9 +1,15 @@
-const connectDB = require("../../../libs/connectDB.js")
+import connectDB from '../../../libs/connectDB.js'
 const {updateUser, deleteUser, getUserDetail} = require('../../../server/services/userService.js')
 
    
 export default async function handler(req, res) {
-    connectDB()
+  
+  //database connection
+  console.log("connecting to Database");
+  await connectDB();
+  console.log("CONNECTED to Database");
+
+  //request handling
   if (req.method === 'GET') {
     const {id} = req.query
     const users= await getUserDetail(id, res)

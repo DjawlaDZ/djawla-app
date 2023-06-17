@@ -1,12 +1,17 @@
 
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction 
-const connectDB = require("../../../libs/connectDB.js");
+import connectDB from '../../../libs/connectDB.js'
 import LieuSchema from '../../../models/LieuSchema';
 
 export default async function handler(req, res) {
   const { query, method } = req;
   const { Category } = query;
-  connectDB()
+  //database connection
+  console.log("connecting to Database");
+  await connectDB();
+  console.log("CONNECTED to Database");
+
+  //request handling
   switch (method) {
     case 'GET':
       try {
