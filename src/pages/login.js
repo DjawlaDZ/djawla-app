@@ -18,8 +18,8 @@ export default function Login () {
       'method': 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({email,mdp})
-    }).then(resp => resp.json()).then(rep=>setData(rep.data));
-    router.push(`/home?token=${data.token}`);
+    }).then(resp => resp.json()).then(rep=>{setData(rep.data);router.push(`/home?token=${rep.data.token}%id=${rep.data.id}`);});
+    
   }
 
  return (

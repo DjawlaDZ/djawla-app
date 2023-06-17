@@ -22,13 +22,13 @@ function Post({data}) {
     return (
         <div className='item'>
             <div className='image'>
-                <Link href={"/"}><img src={data.imagesUrl[0]} className='rounded' width={500} height={350} /></Link>
+                <Link href={"/home"}><img src={data.imagesUrl[0]} className='rounded' width={500} height={350} /></Link>
             </div>
             <div className='info flex justify-center flex-col py-4 '>
                 <div className='cat flex gap-2'>
                     <div className=''>
                     <div className='title flex gap-2'>
-                            <Link href={"/"}><div className='text-xl font-bold'>{data.nom}</div></Link>
+                            <Link href={"/home"}><div className='text-xl font-bold'>{data.nom}</div></Link>
                             
                         </div>
                         {data.wilaya && <div className='title flex gap-2' >

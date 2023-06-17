@@ -34,11 +34,11 @@ function Slide({titre,image,text})
     return(
         <div className='grid md:grid-cols-2'>
                     <div className='image px-2'>
-                        <Link href={"/"}><Image src={image} width={600} height={600} /></Link>
+                        <Link href={"/home"}><Image src={image} width={600} height={600} /></Link>
                     </div>
                     <div className='info flex justify-center flex-col px-2 md:pt-2'>
                         <div className='title'>
-                            <Link href={"/"}><div className='text-3xl md:text-4xl font-bold text-gray-800 hover:text-gray-600'>{titre}</div></Link>
+                            <Link href={"/home"}><div className='text-3xl md:text-4xl font-bold text-gray-800 hover:text-gray-600'>{titre}</div></Link>
                         </div>
                         <p className='text-gray-500 py-3'>{text}
                         </p>
