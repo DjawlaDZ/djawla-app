@@ -70,9 +70,9 @@ export default function Home() {
   return (
     <div>
       <HomeNavBar getUrl={setUrl} getFilter={setfilter}></HomeNavBar>
-      {filter && <Section2 lieux={Filtredlieux}></Section2>}
+      {filter && <Section2 lieux={Filtredlieux} link={"/home"}></Section2>}
       <Section1></Section1>
-      <Section2 lieux={lieux}></Section2>
+      <Section2 lieux={lieux} link={"/home"}></Section2>
       <SideBar></SideBar>
     </div>
   )
