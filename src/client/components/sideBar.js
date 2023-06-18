@@ -1,12 +1,10 @@
 'use client';
 import React, { useState } from 'react';
-import { MdAddRoad, MdMap, MdOutlineDashboard } from "react-icons/md";
-import { RiGuideLine, RiMapPinAddLine, RiSettings4Line } from "react-icons/ri";
-import { TbReportAnalytics } from "react-icons/tb";
 import { AiOutlineUser, AiOutlineHeart } from "react-icons/ai";
-import { FiMessageSquare, FiFolder, FiShoppingCart, FiHome, FiMap, FiMapPin } from "react-icons/fi";
-import { HiMenuAlt3 } from "react-icons/hi";
+import { FiHome, FiMap } from "react-icons/fi";
 import Link from 'next/link';
+import img from './images/Group 11.svg'
+import Image from 'next/image';
 
 export default function SideBar() {
   const menus = [
@@ -24,11 +22,7 @@ export default function SideBar() {
         className={`'h-[100vh] z-[1000] top-0 bg-white min-h-screen w-16 duration-500 text-gray-100 px-4 fixed drop-shadow'}`}
       >
         <div className="py-3 flex justify-end">
-          <HiMenuAlt3
-            size={26}
-            className="cursor-pointer"
-            
-          />
+          <Image src={img}/>
         </div>
         <div className={`mt-4 flex flex-col gap-4 relative `}>
           {menus?.map((menu, i) => (

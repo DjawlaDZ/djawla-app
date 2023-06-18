@@ -19,7 +19,7 @@ export default function Section1() {
             <Swiper 
                     slidesPerView={1}
                     pagination={{clickable:true}}
-                    autoplay={{delay:10000}}
+                    autoplay={{delay:3000}}
                     loop={true}
                     onSwiper={(swiper) => console.log(swiper)}
                 >

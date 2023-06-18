@@ -5,30 +5,30 @@ import { AiOutlineHeart, } from 'react-icons/ai'
 import { FiMapPin } from 'react-icons/fi'
 import { MdFavorite, MdPin, } from 'react-icons/md'
 
-export default function Section2({lieux}) {
+export default function Section2({lieux,link}) {
     
 
     return (
         <div className='container mx-auto md:px-20 py-10 px-16'>
             <h1 className='font-bold text-4xl text-center pb-4'>Les lieux les plus populaires</h1>
             <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-14'>
-                {lieux && lieux.map((lieu)=>{return(<Post key={lieu.id} data={lieu} />)})}
+                {lieux && lieux.map((lieu)=>{return(<Post key={lieu.id} data={lieu} link={link} />)})}
             </div>
         </div>
     )
 }
-function Post({data}) {
+function Post({data,link}) {
     const [stat,setStat]=useState(false);
     return (
         <div className='item'>
             <div className='image'>
-                <Link href={"/home"}><img src={data.imagesUrl[0]} className='rounded' width={500} height={350} /></Link>
+                <Link href={link}><img src={data.imagesUrl[0]} className='rounded' width={500} height={350} /></Link>
             </div>
             <div className='info flex justify-center flex-col py-4 '>
                 <div className='cat flex gap-2'>
                     <div className=''>
                     <div className='title flex gap-2'>
-                            <Link href={"/home"}><div className='text-xl font-bold'>{data.nom}</div></Link>
+                            <Link href={link}><div className='text-xl font-bold'>{data.nom}</div></Link>
                             
                         </div>
                         {data.wilaya && <div className='title flex gap-2' >

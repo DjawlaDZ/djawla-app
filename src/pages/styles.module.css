@@ -30,8 +30,10 @@
     position: absolute;
     color: white;
     position: absolute;
+    cursor: pointer;
 }
-
+.logintext:hover{
+    color: #7DADFE;}
 .Button {
     padding: 4px;
     border: none;
@@ -40,9 +42,11 @@
     color: white;
     right: 4%;
     position: absolute;
-    background-color: #FFAA8B
+    background-color: #FFAA8B;
+    cursor: pointer;
 }
-
+.Button:hover{
+    background-color: #7DADFE;}
 
 .description {
     padding-top: 20px;
